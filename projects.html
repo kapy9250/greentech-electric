@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Projects | GreenTech Electric</title>
+  <meta name="description" content="View our featured electrical projects including Thousand Trails, Woodland Meadows, Gardens of Fontainbleu, and Boardwalk Apartments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .project-detail-image {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-light));
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--spacing-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-detail-image::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 100 L100 0" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+      opacity: 0.3;
+    }
+
+    .project-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .project-stat {
+      background: rgba(16, 185, 129, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-md);
+      color: var(--color-primary-dark);
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#0d5c3e;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <path d="M50 10 Q70 20 75 40 Q80 60 70 75 Q60 85 50 90 Q50 90 50 10" fill="url(#logoGradient)"/>
+            <path d="M55 25 L45 50 L52 50 L42 75 L58 48 L50 48 Z" fill="#ffffff"/>
+          </svg>
+          <span>GreenTech Electric</span>
+        </a>
+        
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="contact.html" class="btn btn-primary">Get Quote</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Hero -->
+  <section class="hero" style="min-height: 50vh;">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1>Our Portfolio</h1>
+        <p>A showcase of our commitment to excellence, innovation, and sustainable energy solutions across the Bay Area.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects List -->
+  <section class="section">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; gap: 6rem;">
+        
+        <!-- Project 1 -->
+        <div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
+          <div class="project-detail-image">TT</div>
+          <div>
+            <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Commercial Complex</span>
+            <h2 style="margin-top: 0.5rem;">Thousand Trails</h2>
+            <p style="font-size: 1.125rem;">A massive energy transformation project for a premier commercial complex in the Bay Area. We completely overhauled the electrical infrastructure to improve efficiency and reliability.</p>
+            <div class="project-stats">
+              <span class="project-stat">Energy Transformation</span>
+              <span class="project-stat">Commercial Scale</span>
+              <span class="project-stat">Bay Area</span>
+            </div>
+            <p style="margin-top: 1.5rem; color: var(--color-text-muted);">Key challenges included maintaining operations during upgrades and integrating modern energy management systems into existing infrastructure.</p>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center; direction: rtl;">
+          <div class="project-detail-image" style="background: linear-gradient(135deg, var(--color-accent), var(--color-primary));">WM</div>
+          <div style="direction: ltr;">
+            <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Residential Community</span>
+            <h2 style="margin-top: 0.5rem;">Woodland Meadows</h2>
+            <p style="font-size: 1.125rem;">We partnered with Woodland Meadows to deliver a sustainable living transformation. The project focused on future-proofing the community with advanced electrical systems capable of supporting modern residential needs.</p>
+            <div class="project-stats">
+              <span class="project-stat">Sustainable Living</span>
+              <span class="project-stat">Infrastructure Upgrade</span>
+            </div>
+            <p style="margin-top: 1.5rem; color: var(--color-text-muted);">This project exemplifies our "Going Green" philosophy, implementing systems designed to reduce long-term energy consumption for residents.</p>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
+          <div class="project-detail-image" style="background: linear-gradient(135deg, #0a0f0d, #1f2937);">GF</div>
+          <div>
+            <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Infrastructure Overhaul</span>
+            <h2 style="margin-top: 0.5rem;">Gardens of Fontainbleu</h2>
+            <p style="font-size: 1.125rem;">A complex underground project requiring precision and expertise. We installed new main sub-feeds to three separate buildings and ran rooftop conduits to modernize the power distribution network.</p>
+            <div class="project-stats">
+              <span class="project-stat">Underground Work</span>
+              <span class="project-stat">Main Sub-feeds</span>
+              <span class="project-stat">Rooftop Conduits</span>
+            </div>
+            <p style="margin-top: 1.5rem; color: var(--color-text-muted);">Navigating underground utilities and coordinating rooftop installations required meticulous planning and execution to ensure safety and code compliance.</p>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center; direction: rtl;">
+          <div class="project-detail-image" style="background: linear-gradient(135deg, #10b981, #34d399);">BA</div>
+          <div style="direction: ltr;">
+            <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Multi-Year Renovation</span>
+            <h2 style="margin-top: 0.5rem;">Boardwalk Apartments</h2>
+            <p style="font-size: 1.125rem;">A comprehensive 3-year renovation project covering 248 apartment units. The scope included installing new main subfeeds and switchgears, effectively rebuilding the electrical backbone of the complex.</p>
+            <div class="project-stats">
+              <span class="project-stat">248 Units</span>
+              <span class="project-stat">Switch Gears</span>
+              <span class="project-stat">3-Year Duration</span>
+            </div>
+            <p style="margin-top: 1.5rem; color: var(--color-text-muted);">This large-scale project demonstrates our ability to manage long-term contracts and deliver consistent quality across hundreds of residential units.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="fade-in" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <h2>Have a Project in Mind?</h2>
+        <p style="font-size: 1.125rem;">Whether it's a large commercial complex or a residential upgrade, we bring the same level of expertise and dedication to every job.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+          <a href="contact.html" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">Start Your Project</a>
+          <a href="services.html" class="btn btn-outline" style="font-size: 1.125rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); color: white; border-color: white;">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <div class="logo" style="margin-bottom: 1rem;">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: 40px;">
+              <defs>
+                <linearGradient id="logoGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0d5c3e;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <path d="M50 10 Q70 20 75 40 Q80 60 70 75 Q60 85 50 90 Q50 90 50 10" fill="url(#logoGradient2)"/>
+              <path d="M55 25 L45 50 L52 50 L42 75 L58 48 L50 48 Z" fill="#ffffff"/>
+            </svg>
+            <span>GreenTech Electric</span>
+          </div>
+          <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">Premium electrical solutions for a sustainable future. Licensed, insured, and committed to excellence.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="projects.html" class="footer-link">Projects</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="services/lighting-design.html" class="footer-link">Lighting Design</a>
+            <a href="services/ev-chargers.html" class="footer-link">EV Chargers</a>
+            <a href="services/tenant-improvement.html" class="footer-link">Tenant Improvement</a>
+            <a href="services/parking-lot-lighting.html" class="footer-link">Parking Lot Lighting</a>
+            <a href="services/electrical-renovations.html" class="footer-link">Electrical Renovations</a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <div class="footer-links">
+            <a href="mailto:info@GreenTechElectricInc.com" class="footer-link">info@GreenTechElectricInc.com</a>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; margin-bottom: 0.5rem;">941 S McGlincy Ln Unit A<br>Campbell, CA 95008</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 GreenTech Electric. All rights reserved. | Licensed Electrical Contractor</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>
