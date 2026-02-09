@@ -3,290 +3,410 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - GreenTech Electric</title>
-    <meta name="description" content="Commercial and multi-family electrical services including lighting design, EV chargers, tenant improvements, and more.">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Electrical Services - Lighting, EV Chargers, Renovations | GreenTech Electric</title>
+    <meta name="description" content="Complete electrical services including lighting design, EV charger installation, electrical renovations, tenant improvements, and parking lot lighting.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#2E7D32',
+                        'brand-dark': '#1B5E20',
+                        'brand-light': '#E8F5E9',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-white">
     <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 2L4 14v14l16 10 16-10V14L20 2z" fill="#10b981"/>
-                    <path d="M20 12l-8 6v8l8 5 8-5v-8l-8-6z" fill="#d1fae5"/>
-                    <path d="M20 18v10M15 24h10" stroke="#047857" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                GreenTech Electric
-            </a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="btn btn-primary">Get a Quote</a></li>
-            </ul>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-brand-green">GreenTech Electric</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-brand-green">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-brand-green">About</a>
+                    <div class="relative group">
+                        <button class="text-gray-900 hover:text-brand-green font-medium flex items-center">
+                            Services
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="py-2">
+                                <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green">All Services</a>
+                                <a href="service-lighting.html" class="block px-4 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green">Lighting Design</a>
+                                <a href="service-ev-chargers.html" class="block px-4 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green">EV Chargers</a>
+                                <a href="service-renovations.html" class="block px-4 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green">Electrical Renovations</a>
+                                <a href="service-tenant-improvement.html" class="block px-4 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green">Tenant Improvement</a>
+                                <a href="service-parking-lot.html" class="block px-4 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green">Parking Lot Lighting</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="projects.html" class="text-gray-700 hover:text-brand-green">Projects</a>
+                    <a href="faq.html" class="text-gray-700 hover:text-brand-green">FAQ</a>
+                    <a href="contact.html" class="bg-brand-green text-white px-4 py-2 rounded-md hover:bg-brand-dark transition">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-brand-green">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green rounded">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green rounded">About</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-900 font-medium hover:bg-brand-light hover:text-brand-green rounded">Services</a>
+                <a href="service-lighting.html" class="block px-3 py-2 pl-6 text-gray-600 hover:bg-brand-light hover:text-brand-green rounded text-sm">Lighting Design</a>
+                <a href="service-ev-chargers.html" class="block px-3 py-2 pl-6 text-gray-600 hover:bg-brand-light hover:text-brand-green rounded text-sm">EV Chargers</a>
+                <a href="service-renovations.html" class="block px-3 py-2 pl-6 text-gray-600 hover:bg-brand-light hover:text-brand-green rounded text-sm">Electrical Renovations</a>
+                <a href="service-tenant-improvement.html" class="block px-3 py-2 pl-6 text-gray-600 hover:bg-brand-light hover:text-brand-green rounded text-sm">Tenant Improvement</a>
+                <a href="service-parking-lot.html" class="block px-3 py-2 pl-6 text-gray-600 hover:bg-brand-light hover:text-brand-green rounded text-sm">Parking Lot Lighting</a>
+                <a href="projects.html" class="block px-3 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green rounded">Projects</a>
+                <a href="faq.html" class="block px-3 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green rounded">FAQ</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:bg-brand-light hover:text-brand-green rounded">Contact</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Our Services</h1>
-            <p>Comprehensive electrical solutions for commercial and multi-family properties throughout Southern California</p>
+    <section class="bg-gradient-to-br from-brand-light to-white py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Services</h1>
+            <p class="text-xl text-gray-700">Comprehensive electrical solutions for commercial, industrial, retail, and non-profit organizations</p>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section-gray">
-        <div class="container">
-            <div class="section-header">
-                <h2>What We Do Best</h2>
-                <p>Specialized electrical services designed for your property's unique needs</p>
-            </div>
-
-            <!-- Top Row: 3 Services -->
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <!-- Services Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Lighting Design -->
+                <a href="service-lighting.html" class="bg-white border-2 border-gray-200 p-8 rounded-lg hover:border-brand-green hover:shadow-xl transition group">
+                    <div class="bg-brand-light rounded-lg p-4 w-20 h-20 flex items-center justify-center mb-6">
+                        <svg class="w-10 h-10 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                         </svg>
                     </div>
-                    <h3>Lighting Design & Installation</h3>
-                    <p>Transform your property with energy-efficient LED lighting systems. From interior common areas to exterior security lighting, we design and install solutions that reduce energy costs by up to 75% while enhancing safety and aesthetics.</p>
-                    <ul style="text-align: left; list-style: none; padding: 0; margin: 1.5rem 0;">
-                        <li style="padding: 0.5rem 0;">✓ LED retrofits & upgrades</li>
-                        <li style="padding: 0.5rem 0;">✓ Smart lighting controls</li>
-                        <li style="padding: 0.5rem 0;">✓ Emergency & exit lighting</li>
-                        <li style="padding: 0.5rem 0;">✓ Landscape lighting</li>
-                    </ul>
-                    <a href="services/lighting-design.html" class="btn btn-primary">Learn More</a>
-                </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-green transition">Lighting Design & Installation</h3>
+                    <p class="text-gray-600 mb-6">
+                        Custom lighting solutions designed to enhance your space while maximizing energy efficiency. We provide comprehensive job walk consultations and expert installations for both interior and exterior applications.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Custom lighting design
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Job walk consultation
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Interior & exterior lighting
+                        </div>
+                    </div>
+                    <span class="text-brand-green font-semibold group-hover:underline">Learn More →</span>
+                </a>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- EV Chargers -->
+                <a href="service-ev-chargers.html" class="bg-white border-2 border-gray-200 p-8 rounded-lg hover:border-brand-green hover:shadow-xl transition group">
+                    <div class="bg-brand-light rounded-lg p-4 w-20 h-20 flex items-center justify-center mb-6">
+                        <svg class="w-10 h-10 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3>EV Charger Installation</h3>
-                    <p>Future-proof your property with electric vehicle charging infrastructure. We handle everything from initial assessment and electrical load calculations to installation and ongoing maintenance of Level 2 charging stations.</p>
-                    <ul style="text-align: left; list-style: none; padding: 0; margin: 1.5rem 0;">
-                        <li style="padding: 0.5rem 0;">✓ Multi-unit charging systems</li>
-                        <li style="padding: 0.5rem 0;">✓ Load management solutions</li>
-                        <li style="padding: 0.5rem 0;">✓ Network & billing integration</li>
-                        <li style="padding: 0.5rem 0;">✓ Incentive coordination</li>
-                    </ul>
-                    <a href="services/ev-chargers.html" class="btn btn-primary">Learn More</a>
-                </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-green transition">EV Charger Installation</h3>
+                    <p class="text-gray-600 mb-6">
+                        Professional installation of electric vehicle charging stations for residential and commercial properties. From Level 1 to commercial Level 3 fast charging solutions.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Level 1 (120V) chargers
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Level 2 (240V) chargers
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Level 3 (480V) commercial
+                        </div>
+                    </div>
+                    <span class="text-brand-green font-semibold group-hover:underline">Learn More →</span>
+                </a>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <!-- Electrical Renovations -->
+                <a href="service-renovations.html" class="bg-white border-2 border-gray-200 p-8 rounded-lg hover:border-brand-green hover:shadow-xl transition group">
+                    <div class="bg-brand-light rounded-lg p-4 w-20 h-20 flex items-center justify-center mb-6">
+                        <svg class="w-10 h-10 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                         </svg>
                     </div>
-                    <h3>Tenant Improvement</h3>
-                    <p>Complete electrical buildouts for new tenants and space renovations. We work efficiently to minimize downtime while delivering code-compliant installations that meet your tenants' specific needs.</p>
-                    <ul style="text-align: left; list-style: none; padding: 0; margin: 1.5rem 0;">
-                        <li style="padding: 0.5rem 0;">✓ Space planning & design</li>
-                        <li style="padding: 0.5rem 0;">✓ Power distribution</li>
-                        <li style="padding: 0.5rem 0;">✓ Data & communication wiring</li>
-                        <li style="padding: 0.5rem 0;">✓ Lighting layouts</li>
-                    </ul>
-                    <a href="services/tenant-improvement.html" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-green transition">Electrical Renovations</h3>
+                    <p class="text-gray-600 mb-6">
+                        Complete electrical renovation services including main panel upgrades, lighting improvements, EV charger installations, and code compliance solutions.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Main panel upgrades
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Lighting upgrades
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Code compliance
+                        </div>
+                    </div>
+                    <span class="text-brand-green font-semibold group-hover:underline">Learn More →</span>
+                </a>
 
-            <!-- Bottom Row: 2 Services (Centered) -->
-            <div class="services-grid-bottom">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="2"/>
-                            <path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10m17-10v10M6 16h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <!-- Tenant Improvement -->
+                <a href="service-tenant-improvement.html" class="bg-white border-2 border-gray-200 p-8 rounded-lg hover:border-brand-green hover:shadow-xl transition group">
+                    <div class="bg-brand-light rounded-lg p-4 w-20 h-20 flex items-center justify-center mb-6">
+                        <svg class="w-10 h-10 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
                         </svg>
                     </div>
-                    <h3>Parking Lot Lighting</h3>
-                    <p>Enhance security and reduce liability with properly designed parking lot lighting. Our LED solutions provide superior illumination while cutting energy costs and maintenance requirements.</p>
-                    <ul style="text-align: left; list-style: none; padding: 0; margin: 1.5rem 0;">
-                        <li style="padding: 0.5rem 0;">✓ LED pole light retrofits</li>
-                        <li style="padding: 0.5rem 0;">✓ Photocell & timer controls</li>
-                        <li style="padding: 0.5rem 0;">✓ Underground wiring</li>
-                        <li style="padding: 0.5rem 0;">✓ Compliance assessments</li>
-                    </ul>
-                    <a href="services/parking-lot-lighting.html" class="btn btn-primary">Learn More</a>
-                </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-green transition">Tenant Improvement</h3>
+                    <p class="text-gray-600 mb-6">
+                        Specialized electrical services for commercial tenant improvement projects. Complete system upgrades, lighting installations, and electrical infrastructure enhancements.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Electrical upgrades
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            System improvements
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Lighting installations
+                        </div>
+                    </div>
+                    <span class="text-brand-green font-semibold group-hover:underline">Learn More →</span>
+                </a>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <!-- Parking Lot Lighting -->
+                <a href="service-parking-lot.html" class="bg-white border-2 border-gray-200 p-8 rounded-lg hover:border-brand-green hover:shadow-xl transition group">
+                    <div class="bg-brand-light rounded-lg p-4 w-20 h-20 flex items-center justify-center mb-6">
+                        <svg class="w-10 h-10 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
                         </svg>
                     </div>
-                    <h3>Electrical Renovations</h3>
-                    <p>Upgrade aging electrical systems to modern, code-compliant standards. From panel replacements to complete property rewiring, we minimize disruption while maximizing safety and capacity.</p>
-                    <ul style="text-align: left; list-style: none; padding: 0; margin: 1.5rem 0;">
-                        <li style="padding: 0.5rem 0;">✓ Panel upgrades & replacements</li>
-                        <li style="padding: 0.5rem 0;">✓ Circuit additions</li>
-                        <li style="padding: 0.5rem 0;">✓ Code compliance updates</li>
-                        <li style="padding: 0.5rem 0;">✓ Phased renovations</li>
-                    </ul>
-                    <a href="services/electrical-renovations.html" class="btn btn-primary">Learn More</a>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-green transition">Parking Lot Lighting</h3>
+                    <p class="text-gray-600 mb-6">
+                        Energy-efficient LED parking lot lighting solutions focused on safety and visibility. Complete installation, maintenance, upgrades, and repair services.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            LED lighting systems
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Installation & maintenance
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <svg class="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Safety-focused design
+                        </div>
+                    </div>
+                    <span class="text-brand-green font-semibold group-hover:underline">Learn More →</span>
+                </a>
+
+                <!-- Additional Services -->
+                <div class="bg-gradient-to-br from-brand-green to-brand-dark text-white p-8 rounded-lg">
+                    <div class="bg-white/20 rounded-lg p-4 w-20 h-20 flex items-center justify-center mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Additional Services</h3>
+                    <p class="mb-6 opacity-90">
+                        We also provide generator repair, bucket truck services, room addition wiring, and electrical solutions for projects of all sizes.
+                    </p>
+                    <a href="faq.html" class="inline-block bg-white text-brand-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">View FAQ</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Additional Services -->
-    <section class="section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Additional Capabilities</h2>
-                <p>Supporting services to keep your property running smoothly</p>
+    <!-- Why Choose Section -->
+    <section class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose GreenTech Electric?</h2>
+                <p class="text-xl text-gray-600">Energy efficiency, sustainability, and 5-star service</p>
             </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <svg class="w-12 h-12 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3>Emergency Services</h3>
-                    <p>24/7 emergency response for power outages, electrical failures, and urgent repairs.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Save Money</h3>
+                    <p class="text-gray-600">Energy-efficient solutions that reduce your utility bills and long-term operating costs.</p>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <div class="text-center">
+                    <div class="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <svg class="w-12 h-12 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3>Preventive Maintenance</h3>
-                    <p>Regular inspections and maintenance programs to prevent costly failures and extend equipment life.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Energy Efficient Property</h3>
+                    <p class="text-gray-600">Sustainable electrical solutions that enhance property value and environmental responsibility.</p>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <div class="text-center">
+                    <div class="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <svg class="w-12 h-12 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
                         </svg>
                     </div>
-                    <h3>Code Compliance</h3>
-                    <p>Electrical assessments, code violation corrections, and permit coordination.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="section-gray">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Process</h2>
-                <p>A streamlined approach that delivers results</p>
-            </div>
-
-            <div class="values-grid" style="max-width: 1000px; margin: 0 auto;">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>1. Consultation</h3>
-                    <p>We meet with you to understand your needs, assess your property, and provide expert recommendations.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>2. Proposal</h3>
-                    <p>Receive a detailed, transparent quote with project timeline, materials list, and payment terms.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>3. Execution</h3>
-                    <p>Our skilled team completes the work efficiently, on schedule, with minimal disruption to your operations.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">5-Star Service</h3>
+                    <p class="text-gray-600">100% customer satisfaction with professional expertise and attention to detail on every project.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Let's Discuss Your Project</h2>
-            <p>Contact us for a free consultation and detailed proposal</p>
-            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+    <section class="bg-gradient-to-r from-brand-green to-brand-dark text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8">
+                Contact us today for a free consultation and discover how we can help with your electrical needs.
+            </p>
+            <a href="contact.html" class="inline-block bg-white text-brand-green px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition">Get a Free Quote</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>GreenTech Electric</h3>
-                    <p>Southern California's trusted commercial and multi-family electrical contractor since 2010.</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/greentech-electric" target="_blank" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">GreenTech Electric</h3>
+                    <p class="text-sm mb-4">Licensed electrical contractor specializing in energy efficiency and sustainable solutions for the San Francisco Bay Area.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-brand-green transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/greentechelectric" target="_blank" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        <a href="#" class="hover:text-brand-green transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <a href="services/lighting-design.html">Lighting Design</a>
-                    <a href="services/ev-chargers.html">EV Chargers</a>
-                    <a href="services/tenant-improvement.html">Tenant Improvement</a>
-                    <a href="services/parking-lot-lighting.html">Parking Lot Lighting</a>
-                    <a href="services/electrical-renovations.html">Electrical Renovations</a>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-brand-green transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-brand-green transition">About Us</a></li>
+                        <li><a href="projects.html" class="hover:text-brand-green transition">Projects</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-green transition">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-green transition">Contact</a></li>
+                    </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <a href="about.html">About Us</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="contact.html">Contact</a>
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="service-lighting.html" class="hover:text-brand-green transition">Lighting Design</a></li>
+                        <li><a href="service-ev-chargers.html" class="hover:text-brand-green transition">EV Chargers</a></li>
+                        <li><a href="service-renovations.html" class="hover:text-brand-green transition">Electrical Renovations</a></li>
+                        <li><a href="service-tenant-improvement.html" class="hover:text-brand-green transition">Tenant Improvement</a></li>
+                        <li><a href="service-parking-lot.html" class="hover:text-brand-green transition">Parking Lot Lighting</a></li>
+                    </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>📞 (555) 123-4567</p>
-                    <p>📧 info@greentechelectric.com</p>
-                    <p>📍 Los Angeles, CA</p>
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>941 S McGlincy Ln Unit A</li>
+                        <li>Campbell, CA 95008</li>
+                        <li class="pt-2">
+                            <a href="mailto:info@GreenTechElectricInc.com" class="hover:text-brand-green transition">info@GreenTechElectricInc.com</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2024 GreenTech Electric. All rights reserved. | Licensed, Bonded & Insured | CA License #123456</p>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2026 GreenTech Electric. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
