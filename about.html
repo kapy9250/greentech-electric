@@ -12,6 +12,9 @@
 </head>
 <body>
   
+  <!-- Brand Bar -->
+  <div class="brand-bar"></div>
+  
   <!-- Header -->
   <header class="header">
     <div class="container">
@@ -48,11 +51,12 @@
   </header>
   
   <!-- Hero -->
-  <section class="hero" style="min-height: 60vh;">
+  <section class="hero hero-with-image" style="min-height: 60vh;">
+    <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content fade-in">
-        <h1>Building a Sustainable Future, One Project at a Time</h1>
-        <p>Since 2011, we've been delivering innovative electrical solutions that prioritize energy efficiency, reliability, and long-term value.</p>
+        <h1>Building a <span class="highlight-green">Sustainable</span> Future, One Project at a Time</h1>
+        <p class="hero-tagline">Since 2011, we've been delivering innovative electrical solutions that prioritize energy efficiency, reliability, and long-term value.</p>
       </div>
     </div>
   </section>
@@ -60,8 +64,8 @@
   <!-- Our Story -->
   <section class="section">
     <div class="container">
-      <div style="max-width: 900px; margin: 0 auto;">
-        <div class="fade-in">
+      <div class="about-two-column fade-in">
+        <div class="about-text">
           <h2>Our Story</h2>
           <p style="font-size: 1.125rem;">Founded in 2011 by Manuel Cortinas, GreenTech Electric was born from a simple yet powerful vision: to make sustainable electrical solutions accessible and affordable for businesses and homeowners throughout the San Francisco Bay Area.</p>
           
@@ -69,63 +73,84 @@
           
           <p style="font-size: 1.125rem;">As a licensed electrical contractor, we stay at the forefront of industry advancements—from cutting-edge EV charging infrastructure to smart building systems. Our philosophy remains unchanged: going green doesn't have to cost you green.</p>
         </div>
+        <div class="about-visual">
+          <div class="about-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="Electrician at work" class="about-image">
+            <div class="decorative-shape"></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   
   <!-- Our Values -->
   <section class="section section-dark">
+    <svg class="section-divider-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+    </svg>
     <div class="container">
       <div class="fade-in" style="text-align: center; margin-bottom: 3rem;">
         <h2>What Drives Us</h2>
-        <p style="font-size: 1.125rem; max-width: 700px; margin: 0 auto;">Our core values guide every decision we make and every project we undertake.</p>
+        <p class="section-subtitle">Our core values guide every decision we make and every project we undertake.</p>
       </div>
       
-      <div class="services-grid">
+      <div class="services-grid-custom">
         <div class="service-card fade-in">
-          <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
+          <div class="service-icon-wrapper">
+            <svg class="service-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
           <h3>Excellence</h3>
           <p>We hold ourselves to the highest standards of quality and professionalism. Every wire, every connection, every system is installed with precision and care.</p>
         </div>
         
         <div class="service-card fade-in">
-          <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
+          <div class="service-icon-wrapper">
+            <svg class="service-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
           <h3>Sustainability</h3>
           <p>Environmental responsibility isn't just a buzzword—it's embedded in everything we do. We design systems that reduce energy consumption and carbon footprint.</p>
         </div>
         
         <div class="service-card fade-in">
-          <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-          </svg>
+          <div class="service-icon-wrapper">
+            <svg class="service-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
           <h3>Client Partnership</h3>
           <p>We're not just contractors—we're your partners in success. We listen, advise, and deliver solutions that align with your goals and budget.</p>
         </div>
         
-        <div class="service-card fade-in">
-          <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
+        <div class="service-card service-card-bottom fade-in">
+          <div class="service-icon-wrapper">
+            <svg class="service-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
           <h3>Innovation</h3>
           <p>The electrical industry evolves rapidly. We invest in continuous learning and embrace new technologies to deliver cutting-edge solutions.</p>
         </div>
         
-        <div class="service-card fade-in">
-          <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-          </svg>
+        <div class="service-card service-card-bottom fade-in">
+          <div class="service-icon-wrapper">
+            <svg class="service-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
           <h3>Safety</h3>
           <p>Electrical work demands absolute attention to safety. We follow rigorous protocols and adhere to all codes to protect our team and your property.</p>
         </div>
         
-        <div class="service-card fade-in">
-          <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
+        <div class="service-card service-card-bottom fade-in" style="grid-column: 3 / span 2;">
+          <div class="service-icon-wrapper">
+            <svg class="service-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
           <h3>Reliability</h3>
           <p>We show up on time, complete projects on schedule, and stand behind our work. Your peace of mind is our priority.</p>
         </div>
@@ -135,6 +160,9 @@
   
   <!-- Why Choose Us -->
   <section class="section">
+    <svg class="section-divider-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#0a0f0d"></path>
+    </svg>
     <div class="container">
       <div style="max-width: 900px; margin: 0 auto;">
         <div class="fade-in" style="text-align: center; margin-bottom: 3rem;">
@@ -219,6 +247,18 @@
             <span>GreenTech Electric</span>
           </div>
           <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">Premium electrical solutions for a sustainable future. Licensed, insured, and committed to excellence.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
         </div>
         
         <div class="footer-section">

@@ -13,30 +13,24 @@
     .project-detail-image {
       width: 100%;
       height: 400px;
-      background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-light));
       border-radius: var(--radius-xl);
       margin-bottom: var(--spacing-lg);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 3rem;
-      font-weight: 700;
       position: relative;
       overflow: hidden;
     }
     
-    .project-detail-image::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 100 L100 0" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
-      opacity: 0.3;
+    .project-detail-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .project-stats {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
       margin-top: 1.5rem;
       flex-wrap: wrap;
     }
@@ -49,9 +43,25 @@
       font-weight: 600;
       font-size: 0.875rem;
     }
+    
+    .project-list-item {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    @media (max-width: 768px) {
+      .project-detail-image {
+        height: 250px;
+      }
+    }
   </style>
 </head>
 <body>
+  
+  <!-- Brand Bar -->
+  <div class="brand-bar"></div>
   
   <!-- Header -->
   <header class="header">
@@ -89,23 +99,118 @@
   </header>
   
   <!-- Hero -->
-  <section class="hero" style="min-height: 50vh;">
+  <section class="hero hero-with-image" style="min-height: 50vh;">
+    <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content fade-in">
-        <h1>Our Portfolio</h1>
-        <p>A showcase of our commitment to excellence, innovation, and sustainable energy solutions across the Bay Area.</p>
+        <h1>Our <span class="highlight-green">Portfolio</span></h1>
+        <p class="hero-tagline">A showcase of our commitment to excellence, innovation, and sustainable energy solutions across the Bay Area.</p>
       </div>
     </div>
   </section>
   
-  <!-- Projects List -->
+  <!-- Projects Grid -->
   <section class="section">
     <div class="container">
+      <div class="fade-in" style="text-align: center; margin-bottom: 3rem;">
+        <h2>Featured Projects</h2>
+        <p style="font-size: 1.125rem; max-width: 700px; margin: 0 auto;">Transforming commercial and residential properties with innovative electrical solutions.</p>
+      </div>
+      
+      <div class="projects-grid-2x2">
+        <div class="project-card fade-in">
+          <div class="project-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Thousand Trails" class="project-img">
+            <div class="project-overlay">
+              <span class="project-overlay-text">View Details →</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Commercial Complex</span>
+            <h3 class="project-title">Thousand Trails</h3>
+            <p class="project-description">Complete energy transformation for a large-scale commercial complex in the Bay Area. Implemented energy-efficient systems that reduced operational costs while improving reliability.</p>
+            <div class="project-stats">
+              <span class="project-stat">Energy Transformation</span>
+              <span class="project-stat">Commercial</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card fade-in">
+          <div class="project-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=800&q=80" alt="Woodland Meadows" class="project-img">
+            <div class="project-overlay">
+              <span class="project-overlay-text">View Details →</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Residential Community</span>
+            <h3 class="project-title">Woodland Meadows</h3>
+            <p class="project-description">Sustainable living transformation featuring advanced electrical infrastructure designed for modern residential demands and future scalability.</p>
+            <div class="project-stats">
+              <span class="project-stat">Sustainable Living</span>
+              <span class="project-stat">Residential</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card fade-in">
+          <div class="project-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Gardens of Fontainbleu" class="project-img">
+            <div class="project-overlay">
+              <span class="project-overlay-text">View Details →</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Infrastructure Overhaul</span>
+            <h3 class="project-title">Gardens of Fontainbleu</h3>
+            <p class="project-description">Comprehensive electrical renovation bringing modern infrastructure to a historic property. Underground work with main sub-feeds to three buildings plus rooftop conduits.</p>
+            <div class="project-stats">
+              <span class="project-stat">Underground Work</span>
+              <span class="project-stat">Main Sub-feeds</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card fade-in">
+          <div class="project-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" alt="Boardwalk Apartments" class="project-img">
+            <div class="project-overlay">
+              <span class="project-overlay-text">View Details →</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Multi-Year Renovation</span>
+            <h3 class="project-title">Boardwalk Apartments</h3>
+            <p class="project-description">3-year comprehensive renovation of 248 apartment units. Installed new main subfeeds and switchgears, bringing the entire complex up to modern electrical standards.</p>
+            <div class="project-stats">
+              <span class="project-stat">248 Units</span>
+              <span class="project-stat">3-Year Project</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Project Details -->
+  <section class="section section-dark">
+    <svg class="section-divider-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+    </svg>
+    <div class="container">
+      <div class="fade-in" style="text-align: center; margin-bottom: 4rem;">
+        <h2>Project Highlights</h2>
+        <p style="font-size: 1.125rem;">Detailed insights into our most impactful electrical projects</p>
+      </div>
+      
       <div style="display: flex; flex-direction: column; gap: 6rem;">
         
         <!-- Project 1 -->
-        <div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
-          <div class="project-detail-image">TT</div>
+        <div class="fade-in project-list-item">
+          <div class="project-detail-image">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Thousand Trails">
+          </div>
           <div>
             <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Commercial Complex</span>
             <h2 style="margin-top: 0.5rem;">Thousand Trails</h2>
@@ -115,13 +220,15 @@
               <span class="project-stat">Commercial Scale</span>
               <span class="project-stat">Bay Area</span>
             </div>
-            <p style="margin-top: 1.5rem; color: var(--color-text-muted);">Key challenges included maintaining operations during upgrades and integrating modern energy management systems into existing infrastructure.</p>
+            <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.7);">Key challenges included maintaining operations during upgrades and integrating modern energy management systems into existing infrastructure.</p>
           </div>
         </div>
         
         <!-- Project 2 -->
-        <div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center; direction: rtl;">
-          <div class="project-detail-image" style="background: linear-gradient(135deg, var(--color-accent), var(--color-primary));">WM</div>
+        <div class="fade-in project-list-item" style="direction: rtl;">
+          <div class="project-detail-image">
+            <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=800&q=80" alt="Woodland Meadows">
+          </div>
           <div style="direction: ltr;">
             <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Residential Community</span>
             <h2 style="margin-top: 0.5rem;">Woodland Meadows</h2>
@@ -130,13 +237,15 @@
               <span class="project-stat">Sustainable Living</span>
               <span class="project-stat">Infrastructure Upgrade</span>
             </div>
-            <p style="margin-top: 1.5rem; color: var(--color-text-muted);">This project exemplifies our "Going Green" philosophy, implementing systems designed to reduce long-term energy consumption for residents.</p>
+            <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.7);">This project exemplifies our "Going Green" philosophy, implementing systems designed to reduce long-term energy consumption for residents.</p>
           </div>
         </div>
         
         <!-- Project 3 -->
-        <div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
-          <div class="project-detail-image" style="background: linear-gradient(135deg, #0a0f0d, #1f2937);">GF</div>
+        <div class="fade-in project-list-item">
+          <div class="project-detail-image">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Gardens of Fontainbleu">
+          </div>
           <div>
             <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Infrastructure Overhaul</span>
             <h2 style="margin-top: 0.5rem;">Gardens of Fontainbleu</h2>
@@ -146,13 +255,15 @@
               <span class="project-stat">Main Sub-feeds</span>
               <span class="project-stat">Rooftop Conduits</span>
             </div>
-            <p style="margin-top: 1.5rem; color: var(--color-text-muted);">Navigating underground utilities and coordinating rooftop installations required meticulous planning and execution to ensure safety and code compliance.</p>
+            <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.7);">Navigating underground utilities and coordinating rooftop installations required meticulous planning and execution to ensure safety and code compliance.</p>
           </div>
         </div>
         
         <!-- Project 4 -->
-        <div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center; direction: rtl;">
-          <div class="project-detail-image" style="background: linear-gradient(135deg, #10b981, #34d399);">BA</div>
+        <div class="fade-in project-list-item" style="direction: rtl;">
+          <div class="project-detail-image">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" alt="Boardwalk Apartments">
+          </div>
           <div style="direction: ltr;">
             <span style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;">Multi-Year Renovation</span>
             <h2 style="margin-top: 0.5rem;">Boardwalk Apartments</h2>
@@ -162,7 +273,7 @@
               <span class="project-stat">Switch Gears</span>
               <span class="project-stat">3-Year Duration</span>
             </div>
-            <p style="margin-top: 1.5rem; color: var(--color-text-muted);">This large-scale project demonstrates our ability to manage long-term contracts and deliver consistent quality across hundreds of residential units.</p>
+            <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.7);">This large-scale project demonstrates our ability to manage long-term contracts and deliver consistent quality across hundreds of residential units.</p>
           </div>
         </div>
 
@@ -171,14 +282,17 @@
   </section>
   
   <!-- CTA -->
-  <section class="section section-dark">
+  <section class="section">
+    <svg class="section-divider-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#0a0f0d"></path>
+    </svg>
     <div class="container">
       <div class="fade-in" style="text-align: center; max-width: 800px; margin: 0 auto;">
         <h2>Have a Project in Mind?</h2>
         <p style="font-size: 1.125rem;">Whether it's a large commercial complex or a residential upgrade, we bring the same level of expertise and dedication to every job.</p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
           <a href="contact.html" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">Start Your Project</a>
-          <a href="services.html" class="btn btn-outline" style="font-size: 1.125rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); color: white; border-color: white;">Explore Services</a>
+          <a href="services.html" class="btn btn-outline" style="font-size: 1.125rem; padding: 1rem 2rem;">Explore Services</a>
         </div>
       </div>
     </div>
@@ -203,6 +317,18 @@
             <span>GreenTech Electric</span>
           </div>
           <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">Premium electrical solutions for a sustainable future. Licensed, insured, and committed to excellence.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
         </div>
         
         <div class="footer-section">
